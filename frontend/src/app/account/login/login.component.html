@@ -1,0 +1,12 @@
+<div class="all">
+    <div class="container">
+        <div class="logo">
+            <img src="assets/img/fotonica.png" alt="">
+        </div>
+        <form (ngSubmit)="onSubmit()" class="formlogin">
+            <input type="email" id="email" class="login" placeholder="E-mail" [(ngModel)]="login.email" [ngModelOptions]="{standalone: true}" />
+            <input type="password" id="password" class="login" placeholder="Senha" [(ngModel)]="login.password" [ngModelOptions]="{standalone: true}" />
+            <button type="submit" class="login button">LOGIN</button>
+        </form>
+    </div>
+</div>

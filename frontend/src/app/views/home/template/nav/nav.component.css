@@ -1,0 +1,16 @@
+.sidenav{
+    background: rgb(2,0,36);
+    width: 200px;
+    box-shadow: 0 0 1em rgb(58, 57, 57);
+    border-radius: 0px 3px 3px 0;
+}
+.sidenav a{
+    color: #ffffff;
+}
+.sidenav i{
+    padding-right: 10px;
+}
+
+.nav{
+    top: 0px !important;
+}
