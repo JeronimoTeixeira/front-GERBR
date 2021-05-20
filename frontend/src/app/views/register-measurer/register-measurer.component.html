@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Register User</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="form" name="formulario" >
+        <input type="id_user" class="id_user" class="input" placeholder="User code" [(ngModel)]="measurer.id_user" [ngModelOptions]="{standalone: true}" />
+        <input type="city" class="city" class="input" placeholder="City" [(ngModel)]="measurer.city" [ngModelOptions]="{standalone: true}" />
+        <input type="state" id="state" class="input" placeholder="State" [(ngModel)]="measurer.state" [ngModelOptions]="{standalone: true}" />
+        <input type="district" id="" class="input" placeholder="District" [(ngModel)]="measurer.district" [ngModelOptions]="{standalone: true}" />
+        <input type="street" id="" class="input" placeholder="Street" [(ngModel)]="measurer.street" [ngModelOptions]="{standalone: true}" />
+        <input type="cep" id="" class="input" placeholder="Cep" [(ngModel)]="measurer.cep" [ngModelOptions]="{standalone: true}" />
+        <input type="complement" id="" class="input" placeholder="Complement" [(ngModel)]="measurer.complement" [ngModelOptions]="{standalone: true}" />
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="insert()">Submit</button>
+</mat-dialog-actions>

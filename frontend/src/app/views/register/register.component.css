@@ -1,0 +1,17 @@
+.img{
+    max-width: 300px;
+    max-height: 300px;
+}
+.container{
+    display:flex;
+    justify-content:space-around;
+}
+.button{
+    border-radius: 4px;
+    /* border: 1px solid #aaa; */
+    padding: 1em 7em 1em 7em;
+    box-shadow: 0 0 0.7em rgb(138, 138, 138);
+}
+h2, h3{ 
+    text-align: center;
+}

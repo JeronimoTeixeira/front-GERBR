@@ -1,0 +1,11 @@
+.input{
+    padding: 1rem 5rem 1rem 5rem;
+    box-sizing: border-box;
+    margin: 1em;
+    border: 0px;
+    background-color: rgb(231, 230, 230);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Register User</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="form" name="formulario" >
+        <input type="name" class="name" class="login" placeholder="name" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" />
+        <input type="email" id="email" class="login" placeholder="E-mail" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" />
+        <input type="password" id="password" class="login" placeholder="Senha" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" />
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="insert()">Submit</button>
+</mat-dialog-actions>
