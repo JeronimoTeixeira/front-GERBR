@@ -1,0 +1,63 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 1.7fr 1fr;
+    grid-template-rows: 0.8fr 1.2fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "graficMeasurersConsumation graficMeasurersConsumation graficMeasuresDay graficMeasuresDay"
+        "graficMeasuresMonth graficMeasuresMonth graficMeasuresDay graficMeasuresDay"
+}
+  
+.graficMeasuresDay { grid-area: graficMeasuresDay; }
+
+.graficMeasuresMonth { grid-area: graficMeasuresMonth; }
+
+.graficMeasurersConsumation { grid-area: graficMeasurersConsumation; }
+  
+.measurer1 {   
+    grid-area: measurer1;
+}
+  
+.measurer2 { 
+    grid-area: measurer2; 
+}
+
+.measurer3 { 
+    grid-area: measurer3; 
+}
+
+.measure{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    color: whitesmoke;
+}
+
+.measure .value{
+    font-size: 80px;
+    padding: 40px;
+}
+
+.selectMeasurer{
+    text-align: center;
+}
+
+.containerSelect{
+    margin: 0.5em;
+    padding-left: 30px;
+}
+
+.match-parent {
+    width: 100%;
+    height: 300px;
+}
+
+.mapContainer{
+    padding-bottom: 30px;
+}
+
+
+

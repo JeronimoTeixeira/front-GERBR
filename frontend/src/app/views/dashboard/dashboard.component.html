@@ -1,0 +1,24 @@
+<div *ngIf="measurers.length!=0" class="containerSelect">
+    <ng-select2 
+    class="selectMeasurer"
+	[data]="measurers"
+    width ="30%"
+    (valueChanged)="updateSelect($event)"
+    >		
+    </ng-select2>
+</div>
+<div class="grid-container">
+    <div class="graficMeasuresDay">
+        <canvas #measuresDay></canvas>
+    </div>
+    <div class="graficMeasurersConsumation">
+        <canvas #measuresMonth></canvas>
+    </div>
+    <div style="margin-top:15px" class="graficMeasuresMonth">
+        <canvas #measuresWeek></canvas>
+    </div>
+</div>
+<div class="mapContainer">
+    <div class="map" id="map" class="match-parent"></div>
+</div>
+
