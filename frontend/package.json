@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.1.0",
     "@angular/animations": "^10.2.4",
     "@angular/cdk": "^10.2.7",
     "@angular/common": "^10.2.4",
@@ -20,7 +21,12 @@
     "@angular/platform-browser": "^10.2.4",
     "@angular/platform-browser-dynamic": "^10.2.4",
     "@angular/router": "^10.2.4",
+    "chart.js": "^2.9.4",
+    "jquery": "^3.6.0",
+    "mapbox-gl": "^2.2.0",
+    "ng-select2": "^1.2.5",
     "rxjs": "~6.6.0",
+    "select2": "^4.1.0-rc.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.10.2"
   },

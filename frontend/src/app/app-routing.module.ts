@@ -1,11 +1,14 @@
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AuthGuard } from './account/shared/auth.guard';
 import { LoginComponent } from './account/login/login.component';
 import { AuthenticationComponent } from './views/authentication/authentication.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent }from './views/home/home.component';
-import { ProductCurdComponent }from './views/product-curd/product-curd.component';
 import { HomepageComponent } from './views/homepage/homepage.component';
+import { RecordsComponent } from './views/records/records.component';
+import { RegisterUserComponent } from './views/register-user/register-user.component';
+import { RegisterComponent } from './views/register/register.component';
 const routes: Routes = [
 {
   path: "",
@@ -16,8 +19,20 @@ const routes: Routes = [
       component: HomepageComponent
     },
     {
-      path: "products",
-      component: ProductCurdComponent
+      path:"dashboard",
+      component: DashboardComponent
+    },
+    {
+      path:"records",
+      component: RecordsComponent
+    },
+    {
+      path:"register",
+      component: RegisterComponent
+    },
+    {
+      path:"register-user",
+      component: RegisterUserComponent
     }
   ]
   ,
