@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   opened: boolean;
+  type = window.localStorage.getItem('type')
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.type);
   }
 
 }
