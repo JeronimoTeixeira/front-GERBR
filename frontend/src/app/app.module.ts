@@ -32,6 +32,7 @@ import { RegisterUserComponent } from './views/register-user/register-user.compo
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { RegisterComponent } from './views/register/register.component';
 import { RegisterMeasurerComponent } from './views/register-measurer/register-measurer.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { RegisterMeasurerComponent } from './views/register-measurer/register-me
     MatDatepickerModule,
     MatNativeDateModule,
     NgSelect2Module,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     httpInterceptorProviders,

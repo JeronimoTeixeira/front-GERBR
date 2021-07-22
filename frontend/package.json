@@ -25,6 +25,7 @@
     "jquery": "^3.6.0",
     "mapbox-gl": "^2.2.0",
     "ng-select2": "^1.2.5",
+    "ngx-toastr": "^14.0.0",
     "rxjs": "~6.6.0",
     "select2": "^4.1.0-rc.0",
     "tslib": "^2.1.0",

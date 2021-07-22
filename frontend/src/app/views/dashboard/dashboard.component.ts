@@ -7,6 +7,7 @@ import { MeasureAddress } from 'src/app/models/dashboard/measureAddress';
 import { MeasurerService } from 'src/app/service/measurer/measurer.service';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
+import { NotificationService } from 'src/app/service/notification/notification.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -31,7 +32,8 @@ export class DashboardComponent implements OnInit {
   }
   constructor(
     private dashboardService: DashboardService, 
-    private measurerService: MeasurerService
+    private measurerService: MeasurerService,
+    private notification: NotificationService
     ) { }
     
   ngOnInit(): void {
@@ -54,6 +56,8 @@ export class DashboardComponent implements OnInit {
         })
       });
       this.updateSelect("1")
+    }, error =>{
+      this.notification.showError(error.statusText,'ERRO')
     })
   }
 
@@ -77,6 +81,8 @@ export class DashboardComponent implements OnInit {
       })
       var borderColor = "rgba(0, 121, 193)"
       this.generateGrafic(this.elementDay, label, data, 'line', borderColor)
+    }, error=>{
+      this.notification.showError(error.statusText,'ERRO')
     });
 
     this.dashboardService.consultMonth(this.body).subscribe(response=>{
@@ -90,6 +96,8 @@ export class DashboardComponent implements OnInit {
       var borderColor = "rgba(0, 121, 193,0.3)"
       var backgroundColor = ["rgba(0, 121, 193)", "coral", "darkorchid", "rgba(0, 121, 193)","coral", "darkorchid", "rgba(0, 121, 193)","coral", "darkorchid", "rgba(0, 121, 193)", "coral", "darkorchid"]
       this.generateGrafic(this.elementMonth, label.reverse(), data.reverse(), 'bar', borderColor, backgroundColor)
+    }, error=>{
+      this.notification.showError(error.statusText,'ERRO')
     });
 
     this.dashboardService.consultWeek(this.body).subscribe(response=>{
@@ -102,6 +110,8 @@ export class DashboardComponent implements OnInit {
       })
       var borderColor = "rgba(178, 140, 255)"
       this.generateGrafic(this.elementWeek, label, data, 'line', borderColor)
+    }, error=>{
+      this.notification.showError(error.statusText,'ERRO')
     });
   }
   
@@ -117,6 +127,8 @@ export class DashboardComponent implements OnInit {
       this.lat = response.features[0].center[1]
       this.generateMap()
 
+    }, error=>{
+      this.notification.showError(error.statusText,'ERRO')
     })
   }
 

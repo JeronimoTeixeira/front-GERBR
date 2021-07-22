@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { MeasurerService } from './../../service/measurer/measurer.service';
 import { RecordService } from 'src/app/service/records/records.service';
 import { Measure } from 'src/app/models/dashboard/measure';
+import { NotificationService } from 'src/app/service/notification/notification.service';
 
 @Component({
   selector: 'app-records',
@@ -13,14 +14,16 @@ import { Measure } from 'src/app/models/dashboard/measure';
 export class RecordsComponent implements OnInit {
   public measurers:Array<Select2OptionData> = [];
   public body = {
-    id_measurer: null,
+    id_measurer: 1,
     dateStart: null,
     dateFinal: null
   }
   public measures:Array<Measure> = []
   constructor(private dashboardService: DashboardService, 
     private measurerService: MeasurerService,
-    private recordsService: RecordService) { }
+    private recordsService: RecordService,
+    private notification: NotificationService
+    ) { }
 
   ngOnInit(): void {
     this.selectMeasurer()
@@ -34,6 +37,8 @@ export class RecordsComponent implements OnInit {
           "text":"Medidor " + (indice+1)
         })
       });
+    }, error=>{
+      this.notification.showError(error.statusText,'ERRO')
     })
   }
 
@@ -45,6 +50,9 @@ export class RecordsComponent implements OnInit {
     this.recordsService.records(this.body).subscribe(response=>{
       this.measures = response.value;
       console.log(this.measures);
+      this.notification.showSuccess('Consultation success', 'Success')
+    }, error=>{
+      this.notification.showError(error.statusText,'ERRO')
     })
   }
 
